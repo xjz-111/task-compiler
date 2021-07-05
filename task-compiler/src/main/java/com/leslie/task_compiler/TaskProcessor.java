@@ -43,7 +43,7 @@ import javax.tools.Diagnostic;
 @AutoService(Processor.class)
 @SupportedOptions("InitTask") //处理器接受参数
 @SupportedSourceVersion(SourceVersion.RELEASE_8) //指定java版本
-@SupportedAnnotationTypes({"com.leslie.annotation.Task"}) //处理的注解
+@SupportedAnnotationTypes({"com.leslie.task_annotation.Task"}) //一定注意这里的包名路径
 public class TaskProcessor extends AbstractProcessor {
 
     // 操作Element的工具类（类，函数，属性，其实都是Element）
