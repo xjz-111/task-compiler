@@ -10,8 +10,7 @@ dependencies {
 
     implementation 'com.squareup:javapoet:1.13.0'
 
-
-
+    api 'com.github.xjz-111:fuck-task-annotation:0.0.1'
 
 }
 
