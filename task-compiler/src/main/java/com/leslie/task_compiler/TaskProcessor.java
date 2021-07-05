@@ -1,11 +1,11 @@
 package com.leslie.task_compiler;
 
 import com.google.auto.service.AutoService;
-import com.leslie.annotation.Constant;
-import com.leslie.annotation.ITask;
-import com.leslie.annotation.Task;
-import com.leslie.annotation.TaskMeta;
-import com.leslie.annotation.TaskType;
+import com.leslie.task_annotation.Constant;
+import com.leslie.task_annotation.ITask;
+import com.leslie.task_annotation.Task;
+import com.leslie.task_annotation.TaskMeta;
+import com.leslie.task_annotation.TaskType;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
@@ -41,7 +41,7 @@ import javax.tools.Diagnostic;
 @AutoService(Processor.class)
 @SupportedOptions("InitTask") //处理器接受参数
 @SupportedSourceVersion(SourceVersion.RELEASE_8) //指定java版本
-@SupportedAnnotationTypes({"com.leslie.annotation.Task", "com.leslie.annotation.IFuck"}) //处理的注解
+@SupportedAnnotationTypes({"com.leslie.annotation.Task"}) //处理的注解
 public class TaskProcessor extends AbstractProcessor {
 
     // 操作Element的工具类（类，函数，属性，其实都是Element）
