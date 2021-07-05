@@ -35,6 +35,8 @@ import javax.lang.model.util.Types;
 import javax.tools.Diagnostic;
 
 /**
+ * 注解处理器 - 扫描注解处理，并生成java类(每个module生成一个，主要用于获取每个module的Task列表)
+ *
  * 作者：xjzhao
  * 时间：2021-06-29 16:47
  */
@@ -77,7 +79,10 @@ public class TaskProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
-        if (set.isEmpty()) return false;
+        if (set.isEmpty()) {
+            messager.printMessage(Diagnostic.Kind.NOTE, "TaskProcessor::*************扫描注解文件为空*************");
+            return false;
+        }
         parse(roundEnvironment.getElementsAnnotatedWith(Task.class));
         return true;
     }
