@@ -127,7 +127,7 @@ public class TaskProcessor extends AbstractProcessor {
 
         getTasksBuilder.addStatement("return list");
 
-        // _InitTask$$InitTask.class
+        // _TaskManager$$TASK$${moduleName}.class
 
         TypeSpec _InitTask$$InitTask = TypeSpec.classBuilder(Constant.FILE_NAME_START + moduleName)
                 .addModifiers(Modifier.PUBLIC, Modifier.FINAL)
